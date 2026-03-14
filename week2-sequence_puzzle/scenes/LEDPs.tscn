@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dbljhmm7o8kom"]
+
+[ext_resource type="Texture2D" uid="uid://djeckfuo5yx8v" path="res://assets/sprites/LEDPs.png" id="1_fong8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fong8"]
+atlas = ExtResource("1_fong8")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbhr6"]
+atlas = ExtResource("1_fong8")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raoa7"]
+atlas = ExtResource("1_fong8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_785c8"]
+atlas = ExtResource("1_fong8")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ck4oa"]
+atlas = ExtResource("1_fong8")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gbhr6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fong8")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbhr6")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raoa7")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_785c8")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ck4oa")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[node name="ledps" type="AnimatedSprite2D" unique_id=840872960]
+sprite_frames = SubResource("SpriteFrames_gbhr6")
+animation = &"blue"

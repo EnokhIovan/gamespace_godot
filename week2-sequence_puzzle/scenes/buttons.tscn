@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://b8pwbr8rnb0uu"]
+
+[ext_resource type="Texture2D" uid="uid://pn5ua4w22k2r" path="res://assets/sprites/buttons.png" id="1_puxpd"]
+[ext_resource type="Script" uid="uid://lgmltychvfhb" path="res://scripts/buttons.gd" id="2_tvki0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puxpd"]
+atlas = ExtResource("1_puxpd")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvki0"]
+atlas = ExtResource("1_puxpd")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yg274"]
+atlas = ExtResource("1_puxpd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4wf3"]
+atlas = ExtResource("1_puxpd")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mge2y"]
+atlas = ExtResource("1_puxpd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l81uu"]
+atlas = ExtResource("1_puxpd")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q03lg"]
+atlas = ExtResource("1_puxpd")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1xhx"]
+atlas = ExtResource("1_puxpd")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x68a6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puxpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvki0")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yg274")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4wf3")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mge2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l81uu")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q03lg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1xhx")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ew542"]
+size = Vector2(16, 10)
+
+[node name="buttons" type="AnimatedSprite2D" unique_id=623754552]
+position = Vector2(-1, -8)
+sprite_frames = SubResource("SpriteFrames_x68a6")
+animation = &"blue"
+script = ExtResource("2_tvki0")
+warna = "$self.animation"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=257979795]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=490461091]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_ew542")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
