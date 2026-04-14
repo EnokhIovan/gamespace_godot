@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b16qgp7qml0w8"]
+
+[ext_resource type="Script" uid="uid://dij8oraytcifj" path="res://scripts/character_pasif.gd" id="1_qqktf"]
+
+[sub_resource type="Theme" id="Theme_1hrxu"]
+
+[node name="CharacterPasif" type="CanvasLayer" unique_id=899104002]
+script = ExtResource("1_qqktf")
+
+[node name="PasifSkill" type="Label" parent="." unique_id=1949529285]
+offset_left = 1030.0
+offset_top = -1.0
+offset_right = 1127.0
+offset_bottom = 22.0
+text = "Poison Slash"
+
+[node name="SkillProg" type="ProgressBar" parent="." unique_id=775767461]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -146.0
+offset_bottom = 21.0
+grow_horizontal = 0
+theme = SubResource("Theme_1hrxu")
+max_value = 6.0
+value = 6.0
+show_percentage = false
+
+[node name="PasifJump" type="Label" parent="." unique_id=674195227]
+offset_left = 1030.0
+offset_top = 24.0
+offset_right = 1127.0
+offset_bottom = 47.0
+text = "Jump Boost"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JumpProg" type="ProgressBar" parent="." unique_id=530274719]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -146.0
+offset_top = 25.0
+offset_bottom = 46.0
+grow_horizontal = 0
+theme = SubResource("Theme_1hrxu")
+max_value = 4.0
+value = 4.0
+show_percentage = false
