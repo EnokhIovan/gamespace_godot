@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://bn8e56xdyghbl"]
+
+[ext_resource type="Texture2D" uid="uid://dyekqljwa0hej" path="res://assets/sprites/slime_purple.png" id="1_kwefu"]
+[ext_resource type="Script" uid="uid://c413akmtfcl7y" path="res://scripts/aggresive_enemy.gd" id="1_mu6nq"]
+[ext_resource type="Texture2D" uid="uid://8e4q36ceurx" path="res://assets/sprites/slime_purple2.png" id="3_yx28t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mu6nq"]
+atlas = ExtResource("1_kwefu")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx28t"]
+atlas = ExtResource("1_kwefu")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o81c5"]
+atlas = ExtResource("1_kwefu")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k65cr"]
+atlas = ExtResource("1_kwefu")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_075qm"]
+atlas = ExtResource("3_yx28t")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_viwki"]
+atlas = ExtResource("3_yx28t")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7fx8"]
+atlas = ExtResource("3_yx28t")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65rgd"]
+atlas = ExtResource("3_yx28t")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bx32"]
+atlas = ExtResource("1_kwefu")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ctq6"]
+atlas = ExtResource("1_kwefu")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oaqov"]
+atlas = ExtResource("1_kwefu")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_216ip"]
+atlas = ExtResource("1_kwefu")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwavj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mu6nq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx28t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o81c5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k65cr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_075qm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_viwki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7fx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65rgd")
+}],
+"loop": true,
+"name": &"sleep",
+"speed": 0.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bx32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ctq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaqov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_216ip")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mu6nq"]
+radius = 13.038404
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hj5qt"]
+radius = 88.005684
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwefu"]
+size = Vector2(14, 12)
+
+[node name="AggresiveEnemy" type="CharacterBody2D" unique_id=1027958228]
+script = ExtResource("1_mu6nq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=168911700]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_xwavj")
+animation = &"sleep"
+autoplay = "sleep"
+frame_progress = 0.18044703
+
+[node name="AttackZone" type="Area2D" parent="." unique_id=2070874694]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackZone" unique_id=1770488822]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_mu6nq")
+
+[node name="Zone" type="Area2D" parent="." unique_id=490520538]
+
+[node name="Area" type="CollisionShape2D" parent="Zone" unique_id=1264330500]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_hj5qt")
+
+[node name="WallCheckFront" type="RayCast2D" parent="." unique_id=2074319496]
+position = Vector2(0, -10)
+target_position = Vector2(30, 0)
+
+[node name="WallCheckUp" type="RayCast2D" parent="." unique_id=1939743563]
+position = Vector2(0, -19)
+target_position = Vector2(30, 0)
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=670902306]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_kwefu")
+
+[connection signal="body_entered" from="AttackZone" to="." method="_on_attZone_body_entered"]
+[connection signal="body_entered" from="Zone" to="." method="_on_zone_body_entered"]
+[connection signal="body_exited" from="Zone" to="." method="_on_zone_body_exited"]
