@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bnnqwcqbuqsif"]
+
+[ext_resource type="Texture2D" uid="uid://dr13jllyuhmnj" path="res://assets/necklace.png" id="1_4gq7n"]
+[ext_resource type="Texture2D" uid="uid://cta2yiq6vwp1" path="res://assets/magicBook.png" id="1_s8enn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8enn"]
+atlas = ExtResource("1_s8enn")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6muww"]
+atlas = ExtResource("1_s8enn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gq7n"]
+atlas = ExtResource("1_4gq7n")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s8enn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8enn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6muww")
+}],
+"loop": true,
+"name": &"magicBook",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gq7n")
+}],
+"loop": true,
+"name": &"necklace",
+"speed": 5.0
+}]
+
+[node name="Item" type="AnimatedSprite2D" unique_id=5936405]
+sprite_frames = SubResource("SpriteFrames_s8enn")

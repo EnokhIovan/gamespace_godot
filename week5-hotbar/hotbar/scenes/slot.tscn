@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dd704blltohmy"]
+
+[ext_resource type="Texture2D" uid="uid://b22mtbmb4q02d" path="res://assets/itemHotbar.png" id="1_4v6ba"]
+[ext_resource type="PackedScene" uid="uid://bnnqwcqbuqsif" path="res://scenes/item.tscn" id="2_ic0fu"]
+[ext_resource type="Texture2D" uid="uid://cn224housxs62" path="res://assets/SelectedItemHotbar.png" id="2_vqyee"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f2j7"]
+atlas = ExtResource("1_4v6ba")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjnr7"]
+atlas = ExtResource("2_vqyee")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n3jes"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f2j7")
+}],
+"loop": true,
+"name": &"Border",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjnr7")
+}],
+"loop": true,
+"name": &"SelectedBorder",
+"speed": 5.0
+}]
+
+[node name="Slot" type="AnimatedSprite2D" unique_id=1040579944]
+sprite_frames = SubResource("SpriteFrames_n3jes")
+animation = &"Border"
+autoplay = "Border"
+
+[node name="Item" parent="." unique_id=1732575507 instance=ExtResource("2_ic0fu")]
+position = Vector2(-2.3841858e-07, 2.3841858e-07)
+scale = Vector2(0.625, 0.625)

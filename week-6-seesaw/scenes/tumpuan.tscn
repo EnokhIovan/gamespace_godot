@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cbbpenbr07kkb"]
+
+[ext_resource type="Texture2D" uid="uid://c1i4o4jbuidi5" path="res://assets/sprites/jungkatJungkit.png" id="1_ba0x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4jjc"]
+size = Vector2(4, 16)
+
+[node name="Tumpuan" type="StaticBody2D" unique_id=1766018925]
+
+[node name="JungkatJungkit" type="Sprite2D" parent="." unique_id=1707635978]
+position = Vector2(0, -16)
+texture = ExtResource("1_ba0x2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=926179079]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_j4jjc")

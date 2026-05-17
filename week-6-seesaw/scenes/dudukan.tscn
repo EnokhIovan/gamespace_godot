@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://2jm8s6msqc7s"]
+
+[ext_resource type="Texture2D" uid="uid://ch7jxwuvns31l" path="res://assets/sprites/Dudukan.png" id="1_wjmri"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ukg5"]
+size = Vector2(32, 1)
+
+[node name="Dudukan" type="RigidBody2D" unique_id=425897408]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2029117492]
+scale = Vector2(4.3999996, 4.3999996)
+texture = ExtResource("1_wjmri")
+region_rect = Rect2(48, 32, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=978548977]
+position = Vector2(0, -2)
+scale = Vector2(4.3999996, 4.3999996)
+shape = SubResource("RectangleShape2D_7ukg5")

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dsmc0r58j83i2"]
+
+[ext_resource type="Script" uid="uid://bql8dgoqtoxj3" path="res://scripts/game.gd" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://djya07dn47on5" path="res://scenes/hotbar.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bnnqwcqbuqsif" path="res://scenes/item.tscn" id="3_lnu2h"]
+
+[node name="Game" type="Node2D" unique_id=428571543]
+script = ExtResource("1_uwrxv")
+
+[node name="Hotbar" parent="." unique_id=1509366018 instance=ExtResource("2_yqjtg")]
+
+[node name="Display" parent="." unique_id=5936405 instance=ExtResource("3_lnu2h")]
+position = Vector2(575.00006, 285)
+scale = Vector2(5.15625, 5.6875)

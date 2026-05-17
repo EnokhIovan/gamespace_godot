@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://djya07dn47on5"]
+
+[ext_resource type="PackedScene" uid="uid://dd704blltohmy" path="res://scenes/slot.tscn" id="1_yj1xu"]
+
+[node name="Hotbar" type="CanvasLayer" unique_id=1509366018]
+
+[node name="List" type="ItemList" parent="." unique_id=1052395403]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.75
+offset_top = -76.0
+offset_right = 192.75
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(-32, -50)
+
+[node name="Slot1" parent="List" unique_id=124268700 instance=ExtResource("1_yj1xu")]
+position = Vector2(38.5, 38)
+scale = Vector2(2.375, 2.375)
+
+[node name="Slot2" parent="List" unique_id=672794482 instance=ExtResource("1_yj1xu")]
+position = Vector2(115.49999, 37.999992)
+scale = Vector2(2.375, 2.375)
+animation = &"SelectedBorder"
+
+[node name="Slot3" parent="List" unique_id=314021517 instance=ExtResource("1_yj1xu")]
+position = Vector2(192.5, 38)
+scale = Vector2(2.375, 2.375)
+
+[node name="Slot4" parent="List" unique_id=582648844 instance=ExtResource("1_yj1xu")]
+position = Vector2(269.5, 38)
+scale = Vector2(2.375, 2.375)
+
+[node name="Slot5" parent="List" unique_id=189767914 instance=ExtResource("1_yj1xu")]
+position = Vector2(346.5, 38)
+scale = Vector2(2.375, 2.375)
