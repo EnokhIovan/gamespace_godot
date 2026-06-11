@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c6e775wn736m1"]
+
+[ext_resource type="Script" uid="uid://dpxhbahpk7bh1" path="res://scripts/trigger_camera.gd" id="1_ii8wk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ii8wk"]
+
+[node name="Node2D" type="Area2D" unique_id=1832448137]
+script = ExtResource("1_ii8wk")
+zoom_in = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2107778012]
+shape = SubResource("CircleShape2D_ii8wk")
